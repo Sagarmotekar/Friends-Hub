@@ -4,8 +4,8 @@ import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import ProfilePage from './pages/ProfilePage'
 import {Toaster} from 'react-hot-toast';
-import { AuthContext } from '../context/AuthContext'
-
+import { AuthContext } from '../context/AuthContext';
+import bgImage from './assets/bgImage.svg'
 
 const App = () => {
   const { authUser } = useContext(AuthContext)
