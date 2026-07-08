@@ -4,23 +4,20 @@ import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import ProfilePage from './pages/ProfilePage'
 import {Toaster} from 'react-hot-toast';
-import { AuthContext } from '../context/AuthContext';
-import bgImage from './assets/bgImage.svg'
+import { AuthContext } from '../context/AuthContext'
+import bgImage from './assets/bgImage.svg'  // ← Import the image
+
 
 const App = () => {
   const { authUser } = useContext(AuthContext)
 
-
   return (
-    <div className="bg-[url('{bgImage}')] bg-contain bg-no-repeat bg-center">
+    <div className="bg-[url('/assets/bgImage.svg')] bg-cover bg-center bg-no-repeat min-h-screen">
       <Toaster/>
       <Routes>
         <Route path='/' element={authUser ? <HomePage/> : <Navigate to="/login"/>} />
-
         <Route path='/login' element={!authUser ? <LoginPage/> : <Navigate to="/"/> } />
-
         <Route path='/profile' element={authUser ? <ProfilePage/>: <Navigate to="/login"/>} />
-
       </Routes>
     </div>
   )
